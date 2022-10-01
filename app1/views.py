@@ -27666,3 +27666,22 @@ def bnk1(request,pk):
     bk=accounts.objects.get(accountsid=pk)
     context={'bk':bk,}
     return render(request,"app1/bnk1.html",context)
+
+
+# rahnas----------
+
+@login_required(login_url='regcomp')
+def temp_payrec(request):
+    try:
+        cmp1 = company.objects.get(id=request.session['uid'])
+        return render(request,'app1/tem_payment_receipt.html')
+    except:
+        return redirect('gotemplates')
+
+@login_required(login_url='regcomp')
+def temp_vendpay(request):
+    try:
+        cmp1 = company.objects.get(id=request.session['uid'])
+        return render(request,'app1/tem_vendor_payment.html')
+    except:
+        return redirect('gotemplates')        
