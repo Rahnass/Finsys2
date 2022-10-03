@@ -520,6 +520,8 @@ urlpatterns = [
     
     re_path(r'^temp_payrec$',views.temp_payrec,name='temp_payrec'),
     re_path(r'^temp_vendpay$',views.temp_vendpay,name='temp_vendpay'),
+    re_path(r'^temp_custst$',views.temp_custst,name='temp_custst'),
+    re_path(r'^temp_vendst$',views.temp_vendst,name='temp_vendst'),
     
 
     

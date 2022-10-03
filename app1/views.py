@@ -27685,3 +27685,19 @@ def temp_vendpay(request):
         return render(request,'app1/tem_vendor_payment.html')
     except:
         return redirect('gotemplates')        
+
+@login_required(login_url='regcomp')
+def temp_custst(request):
+    try:
+        cmp1 = company.objects.get(id=request.session['uid'])
+        return render(request,'app1/tem_cust_stmnt.html')
+    except:
+        return redirect('gotemplates')                
+
+@login_required(login_url='regcomp')
+def temp_vendst(request):
+    try:
+        cmp1 = company.objects.get(id=request.session['uid'])
+        return render(request,'app1/tem_vend_stmnt.html')
+    except:
+        return redirect('gotemplates')          
